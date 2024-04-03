@@ -33,12 +33,22 @@ class HeroBase {
     }
 
     public void putOnSuit() {
-        System.out.println("Here is putting his " + this.suit + " on.");
+        System.out.println("Hero is putting his " + this.suit + " on.");
     }
 }
 
-class BlackPanter extends HeroBase {
+class BlackPanter extends HeroBase {}
+class SuperMan extends HeroBase {
 
+    @java.lang.Override
+    public void useSpecialPower() {
+        super.useSpecialPower();
+        System.out.println("Super Man is using their unqui special power different from other super heroes.");
+    }
+
+    public void fly() {
+        System.out.println("Super Man is Flying ...");
+    }
 }
 
 // Main Class
@@ -53,5 +63,19 @@ class SuperHero {
 
         bp.putOnSuit();
         bp.useSpecialPower();
+
+        System.out.println("============");
+
+        SuperMan sm = new SuperMan();
+        sm.setColor("Blue and Red");
+        sm.setSuit("Spcial Super-Man suit");
+        sm.setSpecialPower("Laser Eyes");
+        sm.putOnSuit();
+        sm.useSpecialPower();
+        sm.fly();
+
+        System.out.println("=================");
+        bp.useSpecialPower();
+        sm.useSpecialPower();
     }
 }
